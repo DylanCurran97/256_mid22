@@ -6,12 +6,27 @@
  */
 
 //TODO manage includes
-
+#include "Pet.h"
 
 using namespace std;
-
+Pet::~Pet(){
+	delete this->petname;
+}
 
 //ALREADY IMPLEMENTED DO NOT CHANGE
+
+Pet::Pet(bool hasCollar, char *name){
+	if (name==NULL) {
+		this->hasCollar = hasCollar;
+		this->petname = 0;
+	}
+	else {
+		this->petname = name;
+		this->hasCollar = hasCollar;
+	}
+}
+
+
 std::string Pet::speak(){
 	string s("UNKNOWN");
 	if(this->petname)
